@@ -62,7 +62,7 @@ export default function Profil() {
 
       <TouchableOpacity
         style={styles.backButton}
-        onPress={() => navigation.navigate('Acceuil')}
+        onPress={() => navigation.navigate('Accueil')}
       >
         <Text style={styles.backButtonText}>Retour à la page d'accueil</Text>
       </TouchableOpacity>

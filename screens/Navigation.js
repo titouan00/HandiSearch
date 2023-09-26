@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Login from './LoginPage'; 
 import Signup from './SignupPage';  
-import Acceuil from './Accueil';  
+import Accueil from './Accueil';  
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
@@ -13,7 +13,7 @@ const AppNavigator = () => {
       <Stack.Navigator initialRouteName="Acceuil">
         <Stack.Screen name="Connexion" component={Login} />
         <Stack.Screen name="Inscription" component={Signup} />
-        <Stack.Screen name="Acceuil" component={Acceuil} />
+        <Stack.Screen name="Accueil" component={Accueil} />
       </Stack.Navigator>
     </NavigationContainer>
   );
