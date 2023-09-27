@@ -8,6 +8,9 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Home from './screens/Home';  
 import Map from './screens/Map';  
 import Profil from './screens/Profil';  
+import { StatusBar } from 'expo-status-bar';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { View } from 'react-native';
 const Stack = createStackNavigator();
 
 const Tab = createBottomTabNavigator();
@@ -18,9 +21,13 @@ function getIconColor(focused){
 }
 
 const Tabs = () => {
+  const insets = useSafeAreaInsets()
   return (
+    <>
+    <View style={{width: '100%', height:insets.top}} ></View>
     <Tab.Navigator 
       screenOptions={{
+        headerShown: false,
         tabBarShowLabel: false,
         tabBarStyle: {
           position: 'absolute',
@@ -62,6 +69,7 @@ const Tabs = () => {
           ),
         }}/>
     </Tab.Navigator>
+    </>
   );
 };
 
