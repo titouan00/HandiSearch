@@ -1,19 +1,17 @@
 import { Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import MapView from 'react-native-maps';
 
-function Map() {
+
+// 
+// style de la map: map: { width: '100%', height: '100%',},
+
+function Home() {
   return (
     <View>
-      <MapView style={styles.map} />
+      <Text>Home</Text>
     </View>
   );
   }
-  const styles = StyleSheet.create({
-    map: { 
-      width: '100%', 
-      height: '100%'
-    },
-  });
-export default Map
+  
+export default Home

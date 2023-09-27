@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 
 
 export default function Connexion() {
-  const navigation = useNavigation();
+  // const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
