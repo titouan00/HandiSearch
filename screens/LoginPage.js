@@ -15,7 +15,7 @@ export default function Connexion() {
 
   return (
     <View style={styles.container}>
-      <Image source={require('../assets/logo_pocketparis.png')} style={{ width: 175, height: 175 }}/>
+      <Image source={require('../assets/logo_pocketparis.png')} style={styles.image}/>
 
       <TextInput
         style={styles.input}
@@ -61,13 +61,19 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 12,
     paddingHorizontal: 10,
-    marginBottom: 15,
+    marginBottom: 30,
+  },
+  image: {
+  width: 175,
+  height: 175,
+  marginBottom: 100
   },
   loginButton: {
-    backgroundColor: 'blue',
+    backgroundColor: '#fe593e',
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
+    marginBottom: 200
   },
   loginButtonText: {
     color: 'white',
@@ -78,7 +84,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   signupButtonText: {
-    color: 'blue',
+    color: '#fe593e',
     fontSize: 16,
     fontWeight: 'bold',
   },
