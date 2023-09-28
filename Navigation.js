@@ -7,7 +7,8 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import Home from './screens/Home';  
 import Map from './screens/Map';  
-import Profil from './screens/Profil';  
+import Profil from './screens/Profil'; 
+
 const Stack = createStackNavigator();
 
 const Tab = createBottomTabNavigator();
@@ -21,6 +22,7 @@ const Tabs = () => {
   return (
     <Tab.Navigator 
       screenOptions={{
+        headerShown: false,
         tabBarShowLabel: false,
         tabBarStyle: {
           position: 'absolute',
