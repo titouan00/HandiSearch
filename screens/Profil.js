@@ -13,7 +13,6 @@ export default function Profil() {
 
   const handleSaveProfile = () => {
     setEditable(false);
-    // Ajoutez ici la logique pour enregistrer les modifications du profil
   };
 
   return (
@@ -61,12 +60,10 @@ export default function Profil() {
         </TouchableOpacity>
       )}
 
-      <TouchableOpacity
-        style={styles.backButton}
-        onPress={() => navigation.navigate('Accueil')}
-      >
-        <Text style={styles.backButtonText}>Retour à la page d'accueil</Text>
-      </TouchableOpacity>
+      <TouchableOpacity style={styles.decoButton} >
+          <Text style={styles.editButtonText}>Déconnexion</Text>
+        </TouchableOpacity>
+      
     </View>
   );
 }
@@ -108,6 +105,13 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
+  },
+  decoButton: {
+    backgroundColor: '#fe593e',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+    marginTop: 20
   },
   editButtonText: {
     color: 'white',
