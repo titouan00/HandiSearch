@@ -26,6 +26,44 @@ export default function Home() {
           style={styles.searchImage}
         />  
       </View>
+      <View style={styles.buttonRow}>
+        
+        <TouchableOpacity style={styles.button}>
+        <Image
+          source={require('../assets/acotepocket.png')} 
+          style={styles.CoteImage}
+          /> 
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Atelier</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Cinéma</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Parc</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Atelier</Text>
+        </TouchableOpacity>
+      </View>
+
+      <TouchableOpacity style={styles.visite}>
+      <Text style={styles.visite_text} >Les plus visités</Text>
+      <Image
+          source={require('../assets/directionpocket.png')} 
+          style={styles.VisiteImage}
+          /> 
+      </TouchableOpacity>
+
+{/* Mettre image arc de triomphe */}
+
+
+      <TouchableOpacity style={styles.visite}>
+      <Text style={styles.visite_text}>Coup de coeur de la semaine</Text>
+      </TouchableOpacity>
+
+
     </View>
   );
 }
@@ -36,15 +74,45 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     padding: 20,
   },
+  visite: {
+  marginTop: 15,
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  },
+  visite_text: {
+    fontSize: 20,
+  },
+  VisiteImage: {
+width: 22,
+height:22
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  button: {
+    borderWidth: 2,
+    padding: 10,
+    borderRadius: 15,
+    borderColor: '#e4e4e4',
+    paddingLeft: 15,
+    paddingRight: 15,
+  },
+  buttonText: {
+    color: '#9e9e9e', 
+  },
   searchImage: {
     width: 30, 
     height: 30,
+  },
+  CoteImage: {
+    width: 15,
+    height: 15,
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 20,
-
   },
   greetingText: {
     fontSize: 18,
@@ -59,9 +127,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 10,
-    marginLeft: 'auto',
-    borderColor: 'Black',
-    },
+    marginLeft: 'auto',    },
   searchBar: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -69,6 +135,7 @@ const styles = StyleSheet.create({
     borderColor: 'gray',
     borderRadius: 5,
     paddingHorizontal: 10,
+    marginBottom: 15
     
   },
   searchInput: {
