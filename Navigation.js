@@ -11,13 +11,12 @@ import Profil from './screens/Profil';
 import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { View } from 'react-native';
-
 const Stack = createStackNavigator();
 
 const Tab = createBottomTabNavigator();
 
 function getIconColor(focused){
-  const color = focused ? '#FE593E' : '#9E9E9E'
+  const color = focused ? '#fe593e' : '#9E9E9E'
   return color
 }
 

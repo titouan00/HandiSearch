@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
-
 export default function Profil() {
   const navigation = useNavigation();
   const [nom, setNom] = useState('John');

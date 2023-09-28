@@ -1,8 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity, StyleSheet, Button } from 'react-native';
+
+let InfoList = []
+
+async function getInfo(){
+  let url = 'https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/que-faire-a-paris-/records?limit=-1'
+  let response = await fetch(url)
+  let data = await response.json()
+  InfoList = data.results
+}
+getInfo()
+console.log(InfoList)
+
+
+
+
 
 
 export default function Home() {
+  const [InfoList, setInfoList] = useState([]);
+
+    useEffect(() => {
+    async function getInfo() {
+      try {
+        let url = 'https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/que-faire-a-paris-/records?limit=-1';
+        let response = await fetch(url);
+        let data = await response.json();
+        setInfoList(data.results);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    }
+
+    getInfo();
+  }, []);
+
   return (
     
     <View style={styles.container}>
@@ -29,14 +61,13 @@ export default function Home() {
       </View>
       <View style={styles.buttonRow}>
         
-        <TouchableOpacity style={styles.button}>
-        <Image
+        
+        <TouchableOpacity style={styles.buttonCote}>
+          <Image
           source={require('../assets/acotepocket.png')} 
           style={styles.CoteImage}
           /> 
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Atelier</Text>
+          <Text style={styles.buttonText}>A côté</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Cinéma</Text>
@@ -61,7 +92,7 @@ export default function Home() {
 
 
       <TouchableOpacity style={styles.visite}>
-      <Text style={styles.visite_text}>Coup de coeur de la semaine</Text>
+      <Text style={styles.visite_text}>Coup de coeurs de la semaine</Text>
       </TouchableOpacity>
 
 
@@ -98,6 +129,15 @@ height:22
     paddingLeft: 15,
     paddingRight: 15,
   },
+  buttonCote: {
+    borderWidth: 2,
+    padding: 10,
+    borderRadius: 15,
+    borderColor: '#e4e4e4',
+    paddingLeft: 15,
+    paddingRight: 15,
+    flexDirection: 'row',
+  },
   buttonText: {
     color: '#9e9e9e', 
   },
@@ -108,6 +148,7 @@ height:22
   CoteImage: {
     width: 15,
     height: 15,
+    marginRight: 5
   },
   header: {
     flexDirection: 'row',
@@ -120,7 +161,6 @@ height:22
   },
   findActivityText: {
     fontSize: 18,
-    fontWeight: 'dark',
     marginTop: 5
   },
   profileImage: {
