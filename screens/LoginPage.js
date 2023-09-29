@@ -9,8 +9,6 @@ export default function Connexion() {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    // Ajoutez ici la logique de connexion avec l'API de votre choix
-    // Vous pouvez utiliser l'état 'email' et 'password' pour envoyer les informations de connexion.
   };
 
   return (

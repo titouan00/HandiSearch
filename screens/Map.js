@@ -7,6 +7,15 @@ import MarkerIcon from '../assets/Point.png';
 
 let locList = []
 
+function CustomMarker() {
+  return (
+    <View style={styles.marker}>
+      <Text style={styles.color}>Tokyo</Text>
+    </View>
+  );
+}
+
+
 async function getLoc(){
     let url = 'https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/que-faire-a-paris-/records?limit=-1'
     let response = await fetch(url)
@@ -51,17 +60,25 @@ function Map() {
                     if (item.lat_lon && item.lat_lon.lon !== null && item.lat_lon.lat !== null) {
                         return (
                             <Marker
-                            description={item.title}
+
+                            title={item.title}
+                            image={item.image}
+                            lead_text={item.lead_text}
                             key={item.id}
                             coordinate={{
                               latitude: item.lat_lon.lat,
                               longitude: item.lat_lon.lon,
                             }}
                           >
+          
                             <Image
-                                source={MarkerIcon} // Set the custom marker image here
-                                style={{ width: 20, height: 20 }} // Adjust the width and height as needed
+                                source={MarkerIcon}
+                                style={{ width: 20, height: 20 }} 
                             />
+                            <CustomMarker/>
+
+                            
+
                           </Marker>
                         );
                     } 
@@ -76,5 +93,13 @@ const styles = StyleSheet.create({
         width: '100%', 
         height: '100%'
     },
+    marker: {
+    paddingVertical: 10,
+    paddingHorizontal: 30,
+    backgroundColor: "#007bff",
+    borderColor: "#eee",
+    borderRadius: 5,
+    elevation: 10,
+  },
 });
 export default Map

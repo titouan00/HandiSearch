@@ -11,7 +11,6 @@ export default function Inscription() {
   const [password, setPassword] = useState('');
 
   const handleInscription = () => {
-    // Ajoutez ici la logique d'inscription avec les informations saisies
   };
 
   return (
